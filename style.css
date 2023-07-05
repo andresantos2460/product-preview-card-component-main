@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap');
+:root{
+    --cl--primary--400:hsl(158, 36%, 37%);
+    --cl--secondary--200:hsl(30, 38%, 92%);
+
+    --cl--neutral--900:hsl(212, 21%, 14%);
+    --cl--secondary--400:hsl(228, 12%, 48%);
+    --cl--primary--100:hsl(0, 0%, 100%);
+    
+    --fw--regular:500;
+    --fw-bold:700;
+
+    --ff--monteserat:'Montserrat', sans-serif;
+    --ff--fraunces:'Fraunces', serif;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+   margin: 1rem;
+   background-color:var(--cl--secondary--200);
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+   h1, h2, h3, h4, h5, h6 {
+    color: --cl--secondary--400;
+    font-family: var(--ff--monteserat);
+    font-weight: var(--fw-bold);
+    line-height: 1.8rem
+  }
+  p{
+    font-family: var(--ff--fraunces);
+    color: var(--cl--secondary--400);
+    font-size: 0.875rem;
+    line-height: 1.2rem;
+  }
+.product{
+  max-width: 650px;
+  background-color: var(--cl--primary--100);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.product__content{
+  display: grid;
+  gap: 2rem;
+  padding: 1rem;
+}
+.product__prices{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.preview{
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.original__price p{
+  font-size: 2rem;
+  color:var(--cl--primary--400);
+  font-weight: var(--fw-bold);
+}
+button{
+  gap: 0.5rem;
+  border: none;
+  padding: 0.5em 1em ;
+  cursor: pointer;
+  color: var(--cl--primary--100);
+  background-color: var(--cl--primary--400);
+  font-family: var(--ff--fraunces);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .5rem;
+}
+button[data-icon="icon"]::before{
+  content: "";
+  width: 15px;
+  height: 16px;
+  background-image: url(images/icon-cart.svg);
+}
+@media(min-width:600px){
+  .product{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
